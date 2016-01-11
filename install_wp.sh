@@ -9,9 +9,13 @@ sudo apt-get update
 # Install apache2
 sudo apt-get -y install apache2
 
-# Install mysql
-sudo apt-get install -y mysql-server php5-mysql
-sudo mysql_secure_installation
+# Install mysql server in a non-interactive mode. default root password will be "root"
+echo "mysql-server mysql-server/root_password password root" | sudo debconf-set-selections
+echo "mysql-server mysql-server/root_password_again password root" | sudo debconf-set-selections
+sudo apt-get install -y mysql-server
+sudo apt-get install -y php5-mysql
+
+#sudo mysql_secure_installation
 
 # Install php5
 sudo apt-get install -y php5 libapache2-mod-php5 php5-mcrypt
@@ -60,7 +64,7 @@ echo "$(tput setaf 1)Create a MySQL Database and User for WordPress$(tput sgr0)"
 
 # Setup first
 root_user=root
-root_ps=toor
+root_ps=root
 
 wp_db_name=wp
 wp_db_host=localhost
@@ -110,3 +114,7 @@ sudo chown -R root:www-data *
 sudo mkdir /var/www/html/wp-content/uploads
 
 sudo chown -R :www-data /var/www/html/wp-content/uploads
+
+# Connect wordpress homepage via lynx
+sudo apt-get install lynx
+lynx localhost
