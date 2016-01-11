@@ -137,7 +137,12 @@ sudo chown -R :www-data /var/www/html/wp-content/uploads
 ### Complete Wordpress installation (Web Interface) through CRUL command
 echo "$(tput setaf 1)Complete Wordpress installation (web interface)...$(tput sgr0)"
 
-curl --data "weblog_title=ANSIBLE&user_name=admin&admin_email=admin@foo.com&blog_public=true&admin_password=demo&admin_password2=demo" 'localhost/wp-admin/install.php?step=2'
+# get eth1 addr from ifconfig
+siteurl=$(ifconfig eth1 | grep 'inet addr' | cut -d ':' -f 2 | cut -d ' ' -f 1)
+
+# Finish installation
+curl --data "weblog_title=DEMO&user_name=admin&admin_email=admin@demo.com&blog_public=true&admin_password=demoadmin&admin_password2=demoadmin" http://$siteurl/wp-admin/install.php?step=2
+
 
 
 ### Connect wordpress homepage via lynx
