@@ -24,6 +24,7 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 echo "==> 6 - setup pathogen path manipulation"
 # append row to ~/.vimrc
 echo "execute pathogen#infect()" | sudo tee -a ~/.vimrc
+source ~/.vimrc
 
 echo "==> 7 - install jedi-vim (https://github.com/davidhalter/jedi-vim)"
 cd ~/.vim/bundle/
