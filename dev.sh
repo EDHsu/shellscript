@@ -48,7 +48,7 @@ echo "==> install atom"
 #sudo dpkg --install atom-amd64.deb
 
 echo "==> install atom package"
-apm install vim-mode color-picker meteor-api meteor-snippets
+apm install color-picker meteor-api meteor-snippets
 
 
 echo "==> update and fininsh installation"
