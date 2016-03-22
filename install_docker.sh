@@ -53,4 +53,4 @@ echo "==> install docker compose"
 sudo pip install docker-compose
 
 echo "==> check installation"
-docker-compose --version
+sudo docker-compose --version
