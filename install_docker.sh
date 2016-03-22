@@ -3,6 +3,9 @@
 echo "==> update package info"
 sudo apt-get update
 
+echo "==> install python"
+sudo apt-get install -y python-pip python-dev python-software-properties
+
 echo "==> ensure that APT works with the https method, and that CA certificates are installed"
 sudo apt-get install -y apt-transport-https ca-certificates
 
