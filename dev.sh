@@ -44,11 +44,12 @@ cd
 
 
 echo "==> install atom"
-#wget https://github.com/atom/atom/releases/download/v1.4.3/atom-amd64.deb
-#sudo dpkg --install atom-amd64.deb
+wget https://github.com/atom/atom/releases/download/v1.4.3/atom-amd64.deb
+sudo dpkg --install atom-amd64.deb
 
 echo "==> install atom package"
-apm install color-picker meteor-api meteor-snippets
+apm install minimap color-picker meteor-api meteor-snippets
+apm install linter linter-pylint 
 
 
 echo "==> update and fininsh installation"
