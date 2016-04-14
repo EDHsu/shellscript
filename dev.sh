@@ -49,8 +49,10 @@ sudo dpkg --install atom-amd64.deb
 
 echo "==> install atom package"
 apm install minimap color-picker meteor-api meteor-snippets
-apm install linter linter-pylint 
+apm install linter 
 
+echo "==> install lint"
+sudo pip install pylint 
 
 echo "==> update and fininsh installation"
 sudo apt-get update
